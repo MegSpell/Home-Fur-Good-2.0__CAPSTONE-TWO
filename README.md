@@ -234,31 +234,31 @@ View global favorite counts
 
 🖼️ Screenshots
 📝 Sign Up Page
-<img src="./public/screenshots/3screenshot-signup.png" width="700" alt="Sign Up Page" /> <p align="center"><em>New users can create an account to access search, favorites, and more.</em></p>
+<img src="./frontend/public/screenshots/3screenshot-signup.png" width="700" alt="Sign Up Page" /> <p align="center"><em>New users can create an account to access search, favorites, and more.</em></p>
 🔐 Login Page
-<img src="./public/screenshots/2screenshot-login.png" width="700" alt="Login Page" /> <p align="center"><em>Existing users log in to access personalized features.</em></p>
+<img src="./frontend/public/screenshots/2screenshot-login.png" width="700" alt="Login Page" /> <p align="center"><em>Existing users log in to access personalized features.</em></p>
 🏡 Home Page
-<img src="./public/screenshots/1screenshot-home.png" width="700" alt="Home Page" /> <p align="center"><em>Public landing page explaining the mission and login/signup options.</em></p>
+<img src="./frontend/public/screenshots/1screenshot-home.png" width="700" alt="Home Page" /> <p align="center"><em>Public landing page explaining the mission and login/signup options.</em></p>
 🌟 Welcome Page
-<img src="./public/screenshots/4screenshot-welcome.png" width="700" alt="Welcome Page" /> <p align="center"><em>Logged-in homepage with a spotlight section for least-favorited dogs.</em></p>
+<img src="./frontend/public/screenshots/4screenshot-welcome.png" width="700" alt="Welcome Page" /> <p align="center"><em>Logged-in homepage with a spotlight section for least-favorited dogs.</em></p>
 🛠️ Admin Welcome View
-<img src="./public/screenshots/13screenshot-welcome.png" width="700" alt="Admin Welcome Page" /> <p align="center"><em>Admins see the same welcome layout but with admin-only tools enabled.</em></p>
+<img src="./frontend/public/screenshots/13screenshot-welcome.png" width="700" alt="Admin Welcome Page" /> <p align="center"><em>Admins see the same welcome layout but with admin-only tools enabled.</em></p>
 🐾 About Page
-<img src="./public/screenshots/9screenshot-about.png" width="700" alt="About Page" /> <p align="center"><em>Project background, purpose, and a personal introduction page.</em></p>
+<img src="./frontend/public/screenshots/9screenshot-about.png" width="700" alt="About Page" /> <p align="center"><em>Project background, purpose, and a personal introduction page.</em></p>
 🔎 Search Page
-<img src="./public/screenshots/5screenshot-search-results.png" width="700" alt="Search Page" /> <p align="center"><em>Filter dogs by ZIP, distance, age, size, sex, breed, and more.</em></p>
+<img src="./frontend/public/screenshots/5screenshot-search-results.png" width="700" alt="Search Page" /> <p align="center"><em>Filter dogs by ZIP, distance, age, size, sex, breed, and more.</em></p>
 📋 Search Results
-<img src="./public/screenshots/6screenshot-results.png" width="700" alt="Search Results" /> <p align="center"><em>Responsive dog card grid showing matches based on user filters.</em></p>
+<img src="./frontend/public/screenshots/6screenshot-results.png" width="700" alt="Search Results" /> <p align="center"><em>Responsive dog card grid showing matches based on user filters.</em></p>
 🐕 Dog Detail Page
-<img src="./public/screenshots/7screenshot-dogdetail.png" width="700" alt="Dog Detail Page" /> <p align="center"><em>Full profile with photo gallery, description, stats, and rescue link.</em></p>
+<img src="./frontend/public/screenshots/7screenshot-dogdetail.png" width="700" alt="Dog Detail Page" /> <p align="center"><em>Full profile with photo gallery, description, stats, and rescue link.</em></p>
 👤 Profile Page
-<img src="./public/screenshots/10screenshot-profile.png" width="700" alt="Profile Page" /> <p align="center"><em>Users can view and edit their account details.</em></p>
+<img src="./frontend/public/screenshots/10screenshot-profile.png" width="700" alt="Profile Page" /> <p align="center"><em>Users can view and edit their account details.</em></p>
 ❤️ Favorites Page
-<img src="./public/screenshots/11screenshot-favorites.png" width="700" alt="Favorites Page" /> <p align="center"><em>Saved dogs appear here for quick access across sessions.</em></p>
+<img src="./frontend/public/screenshots/11screenshot-favorites.png" width="700" alt="Favorites Page" /> <p align="center"><em>Saved dogs appear here for quick access across sessions.</em></p>
 📱 Navigation Menus
-<img src="./public/screenshots/12screenshot-menudropdown.png" width="320" alt="Mobile Navigation" /> <p align="center"><em>Mobile-friendly dropdown menu with all user routes.</em></p> <img src="./public/screenshots/14screenshot-admin-dropdownmenu.png" width="320" alt="Admin Navigation" /> <p align="center"><em>Admin dropdown adds management and dashboard links.</em></p>
+<img src="./frontend/public/screenshots/12screenshot-menudropdown.png" width="320" alt="Mobile Navigation" /> <p align="center"><em>Mobile-friendly dropdown menu with all user routes.</em></p> <img src="./frontend/public/screenshots/14screenshot-admin-dropdownmenu.png" width="320" alt="Admin Navigation" /> <p align="center"><em>Admin dropdown adds management and dashboard links.</em></p>
 🛠️ Admin Dashboard
-<img src="./public/screenshots/15screenshot-admin-dash.png" width="700" alt="Admin Dashboard" /> <p align="center"><em>Admins can view user activity and adoption engagement at a glance.</em></p>
+<img src="./frontend/public/screenshots/15screenshot-admin-dash.png" width="700" alt="Admin Dashboard" /> <p align="center"><em>Admins can view user activity and adoption engagement at a glance.</em></p>
 🔌 API Documentation
 🐶 External API — RescueGroups.org
 
