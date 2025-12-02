@@ -1,0 +1,291 @@
+/* ============================================================
+   AUTH PAGES (Login / Signup / Profile-style screens)
+   ------------------------------------------------------------
+   These styles control the layout + look of the "card" screens:
+   - /login
+   - /signup
+   - /profile (reuses a lot of this styling)
+   ============================================================ */
+
+/* Main container for auth pages.
+   - Uses flex to center the card horizontally
+   - Aligns it near the top vertically (not dead center)
+   - Leaves room for header + footer via min-height and padding */
+.auth-page {
+  display: flex;
+  justify-content: center;        /* center horizontally */
+  align-items: flex-start;        /* align near the top vertically */
+  min-height: calc(100vh - 160px);/* "full height" minus header/footer guess */
+  padding: 3rem 1rem 2rem;        /* top / sides / bottom padding */
+}
+
+/* The white card that holds the form and text (login/signup box)
+   - Has a max width so it doesn't stretch too wide on big screens
+   - Slight rounding + shadow for that "card" feel */
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Large title at the top of the card.
+   Example: "Log in" or "Create an account" */
+.auth-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.6rem;
+  color: var(--sage-deep);
+}
+
+/* Subtitle text right under the main title.
+   Example: "Welcome back! Let’s find your new best friend." */
+.auth-subtitle {
+  margin: 0 0 1.25rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* (Legacy) h2 / p inside auth-card
+   ------------------------------------------------------------
+   If older components still use <h2> or <p> directly inside
+   .auth-card, these styles keep them looking nice, and they
+   won't break anything with your newer .auth-title / subtitle.
+   ------------------------------------------------------------ */
+.auth-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--sage-deep);
+}
+
+.auth-card p {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* ============================================================
+   NEWER AUTH FORM LAYOUT
+   ------------------------------------------------------------
+   Used by the new Login/Signup components.
+   Sets up a vertical column with consistent spacing.
+   ============================================================ */
+
+/* Wrapper for the form fields */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;         /* vertical space between rows */
+}
+
+/* One "row" in the form:
+   label
+   input
+*/
+.auth-form .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Labels inside auth forms */
+.auth-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Text inputs inside auth forms
+   - Full width of card
+   - Pill-shaped (border-radius: 999px)
+*/
+.auth-form input {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+}
+
+/* Focus state for auth inputs (when clicked into) */
+.auth-form input:focus {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 1px;
+  border-color: var(--sage-dark);
+}
+
+/* ============================================================
+   LEGACY AUTH FIELD STYLES
+   ------------------------------------------------------------
+   Some older auth components might still use .auth-field
+   instead of .auth-form .form-row. Keeping these means you
+   don't have to refactor everything at once.
+   ============================================================ */
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* Label-ish text inside .auth-field (often wrapped in <span>) */
+.auth-field span {
+  font-weight: 600;
+}
+
+/* Input inside .auth-field (rectangular vs pill shape) */
+.auth-field input {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+}
+
+/* Focus state for .auth-field inputs */
+.auth-field input:focus {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 1px;
+  border-color: var(--sage-dark);
+}
+
+/* ============================================================
+   GENERIC FORM GROUP (also used by search form)
+   ------------------------------------------------------------
+   This is a shared pattern for label + input/select rows, not
+   just on auth pages.
+   ============================================================ */
+
+.form-group {
+  margin-bottom: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Inputs and selects inside form-group */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+}
+
+/* Focus styles for those fields */
+.form-group input:focus,
+.form-group select:focus {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 1px;
+  border-color: var(--sage-dark);
+}
+
+/* ============================================================
+   AUTH ERROR MESSAGE + SWITCH LINK
+   ------------------------------------------------------------
+   - .auth-error: red alert box for login/signup errors
+   - .auth-switch / .auth-toggle: small text at bottom that
+     links to "Log in" or "Sign up" screen.
+   ============================================================ */
+
+/* Error box shown above the form when something goes wrong */
+.auth-error {
+  background-color: #ffe0e0;
+  border-left: 6px solid #e53e3e;
+  color: #742a2a;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+}
+
+/* Bottom text like:
+   "Already have an account? Log in"
+   or
+   "Don't have an account? Sign up"
+*/
+.auth-switch,
+.auth-toggle {
+  margin-top: 0.9rem;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+/* The links inside that bottom text */
+.auth-toggle a,
+.auth-switch a {
+  font-weight: 600;
+  color: var(--sage-deep);
+  text-decoration: underline;
+}
+
+.auth-toggle a:hover,
+.auth-switch a:hover {
+  text-decoration: none;
+}
+
+/* ============================================================
+   PRIMARY BUTTON (UTILITY)
+   ------------------------------------------------------------
+   Reusable button style used on:
+   - auth forms
+   - welcome/search buttons
+   ============================================================ */
+
+.btn-primary {
+  background-color: var(--sage-dark);
+  color: #fff;
+  border-radius: 999px;  /* pill shape */
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Hover effect for primary button */
+.btn-primary:hover {
+  background-color: var(--sage-deep);
+}
+
+/* In auth pages, we often want the button full-width.
+   .auth-button gets used *in addition* to .btn-primary:
+   <button className="btn-primary auth-button"> */
+.auth-button {
+  margin-top: 0.75rem;
+  width: 100%;
+  justify-content: center; /* for flex buttons (if display: flex applied) */
+}
+
+/* ============================================================
+   LEGACY AUTH SUBMIT BUTTON
+   ------------------------------------------------------------
+   Older forms may still use .auth-submit instead of combining
+   .btn-primary + .auth-button. Keeping this for backwards
+   compatibility.
+   ============================================================ */
+
+.auth-submit {
+  margin-top: 0.75rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--sage-dark);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.auth-submit:hover {
+  background-color: var(--sage-deep);
+}

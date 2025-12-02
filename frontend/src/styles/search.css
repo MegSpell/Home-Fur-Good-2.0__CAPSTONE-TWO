@@ -1,0 +1,226 @@
+/* ============================================================
+   SEARCH PAGE & SEARCH FORM LAYOUT
+   ------------------------------------------------------------
+   This file controls:
+     - Search page container
+     - Search form card/grid
+     - Checkboxes for temperament/traits
+     - Search button
+     - Multi-breed dropdown UI
+============================================================ */
+
+/* ============================================================
+   SEARCH PAGE WRAPPER
+============================================================ */
+
+.search-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.search-page h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+/* ============================================================
+   SEARCH FORM CARD
+============================================================ */
+
+.search-form {
+  margin-bottom: 1.25rem;
+  background: #fff;
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* Grid for inputs (zip, miles, sex, age, size...) */
+.search-form__grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+/* Rows of checkboxes (dogs/cats/kids/housetrained/etc.) */
+.checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.checkbox-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Search button */
+.search-form button {
+  margin-top: 0.75rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+
+  background-color: var(--sage-dark);
+  color: #fff;
+
+  font-weight: 600;
+}
+
+/* ============================================================
+   MULTI-BREED DROPDOWN
+   - Used for selecting multiple dog breeds at once
+============================================================ */
+
+.breed-dropdown {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+/* Top row: label + "x selected" */
+.breed-dropdown__top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.35rem;
+}
+
+/* Label + hint text */
+.breed-dropdown__label-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.breed-dropdown__label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.breed-dropdown__hint {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Panel body (white dropdown box) */
+.breed-dropdown__panel {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #d1e0d7;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+/* "Select all breeds" row */
+.breed-dropdown__all-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.breed-dropdown__all-row input {
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+/* Search bar for filtering breeds */
+.breed-dropdown__search-row {
+  margin-top: 0.1rem;
+}
+
+.breed-dropdown__search-input {
+  width: 100%;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.9rem;
+}
+
+/* Scrollable list of breeds */
+.breed-dropdown__list {
+  margin-top: 0.45rem;
+  max-height: 230px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.25rem;
+}
+
+/* Each breed row: checkbox + label */
+.breed-dropdown__option {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.15rem 0;
+  font-size: 0.9rem;
+
+  white-space: nowrap;
+}
+
+.breed-dropdown__option input {
+  width: auto;
+  height: auto;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.breed-dropdown__option span {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* "No matches" text when searching breeds */
+.breed-dropdown__empty {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  padding: 0.25rem 0;
+}
+
+/* ============================================================
+   SELECTED BREEDS (pills shown beneath dropdown)
+============================================================ */
+
+.breed-selected-list {
+  margin-top: 0.45rem;
+  font-size: 0.85rem;
+}
+
+.breed-selected-list__label {
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+.breed-selected-list__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.3rem;
+}
+
+/* Individual selected breed chip */
+.breed-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+
+  background-color: var(--sage-light);
+  border: 1px solid var(--sage);
+}
+
+/* “X” button to remove a breed */
+.breed-pill button {
+  border: none;
+  background: transparent;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+}

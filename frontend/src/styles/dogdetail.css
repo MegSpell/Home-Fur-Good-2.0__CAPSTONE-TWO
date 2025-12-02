@@ -1,0 +1,229 @@
+/* ============================================================
+   DOG DETAIL PAGE LAYOUT
+   ------------------------------------------------------------
+   This page shows:
+     - Main dog photo + thumbnails (left column)
+     - Dog info card with heart, stats, pills, description, CTA (right column)
+   ============================================================ */
+
+.dog-detail {
+  margin-top: 1rem;
+}
+
+/* Back button wrapper (above the grid) */
+.dog-detail__back {
+  margin-bottom: 0.8rem;
+}
+
+/* ------------------------------------------
+   SECONDARY BUTTON (Back to Search/Favorites)
+------------------------------------------- */
+.btn-secondary {
+  background: #ffffff;
+  color: var(--sage-deep);
+  border-radius: 999px;
+  border: 1px solid var(--sage);
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+.btn-secondary:hover {
+  background: var(--sage-light);
+}
+
+/* ============================================================
+   GRID LAYOUT — MAIN STRUCTURE
+   ------------------------------------------------------------
+   Left:  photo + thumbnails
+   Right: info card
+   ============================================================ */
+.dog-detail__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+}
+
+/* Collapse to single column on mobile */
+@media (max-width: 800px) {
+  .dog-detail__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   LEFT COLUMN — PHOTO GALLERY
+   ============================================================ */
+
+.dog-detail__media {
+  position: relative; /* allows heart or overlays if needed */
+  background: #fff;
+  border-radius: 16px;
+  padding: 0.7rem;
+  border: 1px solid rgba(184, 216, 186, 0.9);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Main dog image */
+.dog-detail__main-image {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;   /* keeps entire dog visible */
+  border-radius: 12px;
+  display: block;
+}
+
+/* Thumbnail row */
+.dog-detail__thumbs {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Each thumbnail image */
+.dog-detail__thumb {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.8;
+  border: 2px solid transparent;
+}
+
+/* Highlight selected thumbnail */
+.dog-detail__thumb--active {
+  opacity: 1;
+  border-color: var(--sage-dark);
+}
+
+/* ============================================================
+   RIGHT COLUMN — INFO CARD
+   ============================================================ */
+
+.dog-detail__info-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.2rem 1.1rem 1.3rem;
+  border: 1px solid rgba(184, 216, 186, 0.9);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Dog name */
+.dog-detail__name {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+/* City, State */
+.dog-detail__location {
+  margin: 0 0 0.8rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* Quick stats grid (age, sex, size, breed, distance) */
+.dog-detail__quickstats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.3rem 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+/* "Good with" pills (dogs, cats, kids, etc.) */
+.dog-detail__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Dog description (pulled from text or HTML stripped text) */
+.dog-detail__description {
+  margin-top: 0.5rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(209, 213, 219, 0.8);
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+/* ============================================================
+   RESCUE LINK (CTA BUTTON + hint text)
+   ============================================================ */
+
+.dog-detail__external {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.dog-detail__external-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+
+  background-color: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+
+  transition:
+    background-color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.dog-detail__external-btn:hover {
+  background-color: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+/* Hint under CTA button */
+.dog-detail__external-hint {
+  margin-top: 0.45rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+/* ============================================================
+   FAVORITE HEART (top right of name row)
+   ============================================================ */
+
+.dog-detail__name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* Heart button appearance */
+.dog-detail-heart {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  font-size: 2rem;
+  padding: 0;
+  line-height: 1;
+  color: #bbb;              /* gray outline heart */
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.dog-detail-heart:hover {
+  transform: scale(1.1);
+}
+
+/* Active (favorited) heart */
+.dog-detail-heart.active {
+  color: #e63946; /* red heart */
+  filter: drop-shadow(0 0 4px rgba(230, 57, 70, 0.4));
+}

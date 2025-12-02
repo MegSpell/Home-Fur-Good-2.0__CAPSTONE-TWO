@@ -1,0 +1,97 @@
+/* ============================================================
+   BASIC RESET + GLOBAL ELEMENTS
+   ------------------------------------------------------------
+   These styles apply everywhere in the app. They:
+     - Normalize box sizing
+     - Reset default margins/padding
+     - Set up global typography + background
+     - Provide shared defaults for <a>, <button>, forms, etc.
+   ============================================================ */
+
+/* Universal “better box model”
+   ------------------------------------------------------------
+   Forces padding + border to be included in width/height
+   which prevents layout surprises. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin/padding on the root elements
+   and ensure the full viewport height is available. */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;  /* useful for flex layouts and full-height pages */
+}
+
+/* ============================================================
+   BODY STYLING
+   ------------------------------------------------------------
+   Sets the default font, colors, and your repeating paw pattern.
+   ============================================================ */
+body {
+  /* Modern system-based font stack for clean UI look */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+
+  /* Your brand base background + text color */
+  background-color: var(--sage-light);
+  color: var(--text-main);
+
+  /* PAW PATTERN BACKGROUND
+     - Repeats across the whole app
+     - Scaled large so it’s soft + subtle */
+  background-image: url("/paws-bg.png");
+  background-repeat: repeat;
+  background-size: 280px 280px;
+}
+
+/* ============================================================
+   GLOBAL LINK STYLES
+   ------------------------------------------------------------
+   By default, links inherit text color and drop underlines so
+   your app looks more like a styled UI than blue hyperlinks.
+   ============================================================ */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* If you want links to underline on hover across the whole site,
+   just uncomment this.
+a:hover {
+  text-decoration: underline;
+}
+*/
+
+/* ============================================================
+   BUTTON RESET
+   ------------------------------------------------------------
+   Normalizes font + pointer cursor for all <button> elements.
+   ============================================================ */
+button {
+  font-family: inherit;   /* ensures buttons use the same font as the UI */
+  font-size: 1rem;
+  cursor: pointer;        /* ensures the pointer on hover */
+}
+
+/* ============================================================
+   GENERIC FORM INPUT STYLES
+   ------------------------------------------------------------
+   Provides a clean base look for input/select/textarea.
+   Individual screens (Auth, Search, Profile, Admin)
+   override or enhance these.
+   ============================================================ */
+input,
+select,
+textarea {
+  font-size: 1rem;
+  padding: 6px;                    /* small balanced padding */
+  border-radius: 4px;              /* subtle rounding */
+  border: 1px solid #cbd5e1;       /* soft gray border */
+}

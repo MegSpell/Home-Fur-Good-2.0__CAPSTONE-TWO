@@ -1,0 +1,234 @@
+/* ============================================================
+   ABOUT PAGE — GLOBAL WRAPPER
+   ------------------------------------------------------------
+   This centers the page, limits the maximum width, and gives
+   comfy padding around all About page content.
+   ============================================================ */
+.about-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+/* ============================================================
+   HERO SECTION (Top card with intro text + buttons)
+   ------------------------------------------------------------
+   These styles help the hero feel visually distinct.
+   ============================================================ */
+
+.about-hero h1 {
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+  color: var(--sage-deep);
+}
+
+.about-lead {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-cta {
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.about-hero-buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap; /* lets buttons wrap on smaller screens */
+}
+
+/* ============================================================
+   “MEET THE DOGS” SECTION
+   ------------------------------------------------------------
+   Two-column layout:
+     • Left: text describing the dogs
+     • Right: photo with caption
+   On smaller screens, this stacks vertically.
+   ============================================================ */
+.about-dogs {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.about-dogs-photo-wrapper {
+  text-align: center;
+}
+
+.about-dogs-photo {
+  max-width: 100%; /* responsive */
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+.about-dogs-caption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* ============================================================
+   RESCUE ORGANIZATIONS GRID
+   ------------------------------------------------------------
+   Each rescue appears in a nice uniform card.
+   Grid automatically adjusts based on screen width.
+   ============================================================ */
+.about-rescues {
+  margin-top: 2.5rem;
+}
+
+.about-rescues-intro {
+  margin-bottom: 1.25rem;
+}
+
+.rescue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.rescue-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 1rem 1rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.rescue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+}
+
+.rescue-logo-wrap {
+  height: 72px; /* keeps logos consistently sized */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rescue-logo {
+  max-height: 72px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* ============================================================
+   GENERIC ABOUT CARD (white background + shadow)
+   ------------------------------------------------------------
+   Used by multiple sections to give a clean card look.
+   ============================================================ */
+.about-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+  margin-bottom: 1.75rem;
+}
+
+/* Extra styling for the hero card so it stands out */
+.about-hero {
+  border-left: 6px solid var(--sage-dark);
+}
+
+/* ============================================================
+   MOBILE ADJUSTMENTS
+   ------------------------------------------------------------
+   When screen is narrow (< 768px), the dogs section stacks
+   vertically instead of being side-by-side.
+   ============================================================ */
+@media (max-width: 768px) {
+  .about-dogs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-dogs-photo {
+    max-width: 280px;
+  }
+}
+
+/* ============================================================
+   ABOUT MEG SECTION
+   ------------------------------------------------------------
+   Two columns:
+     • Left: text
+     • Right: rectangular portrait of Meg
+   The portrait keeps its full proportions.
+   ============================================================ */
+.about-meg {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-meg-text {
+  flex: 2;
+}
+
+.about-meg-photo-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-meg-photo {
+  width: 400px;          /* larger portrait */
+  height: auto;          /* keep natural proportions */
+  object-fit: contain;   /* show complete image (not cropped) */
+  border-radius: 20px;   /* soft rounded corners */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+/* ============================================================
+   “THANK YOU RESCUEGROUPS.ORG” SECTION
+   ------------------------------------------------------------
+   A soft green-highlighted info block to acknowledge the API.
+   ============================================================ */
+.about-thanks {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  background-color: #f6fbf7; /* gentle branded background */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.about-thanks h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  color: var(--sage-deep);
+}
+
+.about-thanks-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-thanks-logo {
+  width: 200px;
+  height: auto;
+  border-radius: 6px;
+  flex-shrink: 0; /* prevents shrinking on smaller screens */
+}
+
+.about-thanks p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.about-thanks a {
+  color: var(--sage-deep);
+  font-weight: 600;
+  text-decoration: underline;
+}

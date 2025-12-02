@@ -1,0 +1,23 @@
+/* =========================================
+   COLOR VARIABLES (Global Theme)
+   -----------------------------------------
+   These define the full color palette for:
+     - Primary sage branding
+     - Accent orange tones
+     - Text and UI elements
+========================================= */
+
+:root {
+  /* Primary brand greens */
+  --sage-light: #e6f2e7;
+  --sage:       #b8d8ba;
+  --sage-dark:  #6b8f71;
+  --sage-deep:  #2f4f3a;
+
+  /* Accent oranges */
+  --accent:      #f4a261;
+  --accent-dark: #e76f51;
+
+  /* Text */
+  --text-main: #16302b;
+}

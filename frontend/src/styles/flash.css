@@ -1,0 +1,88 @@
+/* ============================================================
+   FLASH MESSAGE SYSTEM
+   ------------------------------------------------------------
+   These styles support transient notifications that appear
+   at the top of the page:
+     - success (green)
+     - info (blue)
+     - error (red)
+   They are positioned by the <FlashMessages /> component.
+   ============================================================ */
+
+/* ------------------------------------------
+   CONTAINER (holds all flash messages)
+   ------------------------------------------
+   - Fixed near the top of the viewport
+   - Centered horizontally
+   - Can hold multiple stacked messages
+-------------------------------------------- */
+.flash-container {
+  position: fixed;
+  top: 72px;                      /* sits under header */
+  left: 50%;
+  transform: translateX(-50%);    /* perfect centering */
+  z-index: 40;                    /* above almost everything */
+  width: min(90%, 480px);         /* responsive width */
+}
+
+/* ------------------------------------------
+   FLASH MESSAGE BOX
+------------------------------------------- */
+.flash {
+  max-width: 960px;               /* optional safeguard */
+  margin: 0.75rem auto 0.5rem;    /* spacing between messages */
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  /* subtle 3D lift */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  background-color: #ffffff;      /* base bg—overridden by variants */
+}
+
+/* ============================================================
+   FLASH TYPES (color-coded message styles)
+   ============================================================ */
+
+/* ✔ SUCCESS (green) */
+.flash--success {
+  background-color: #d9f5e5;      /* soft green */
+  border-left: 6px solid #2f855a;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  color: #22543d;
+}
+
+/* 🔵 INFO (blue) */
+.flash--info {
+  background-color: #dceeff;
+  border-left: 6px solid #3182ce;
+  color: #1a4f7a;
+}
+
+/* ❌ ERROR (red) */
+.flash--error {
+  background-color: #ffe0e0;
+  border-left: 6px solid #e53e3e;
+  color: #742a2a;
+}
+
+/* ============================================================
+   CLOSE BUTTON (small “×” on the right)
+   ============================================================ */
+.flash__close {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding-left: 0.75rem;
+  line-height: 1;
+}

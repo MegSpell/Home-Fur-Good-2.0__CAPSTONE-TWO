@@ -1,0 +1,238 @@
+/* Home Fur Good 2.0 – CSS entry point */
+
+
+@import "./styles/variables.css";
+@import "./styles/base.css";
+@import "./styles/layout.css";
+
+@import "./styles/welcome.css";
+
+
+@import "./styles/home.css";
+@import "./styles/auth.css";
+@import "./styles/search.css";
+@import "./styles/results.css";
+@import "./styles/dogdetail.css";
+@import "./styles/flash.css";
+@import "./styles/admin.css";
+@import "./styles/about.css";
+
+
+
+/* =========================================
+   RESPONSIVE / MOBILE TWEAKS
+   (Put this at the very bottom so it wins)
+========================================= */
+
+/* -------- Tablet & down (≤ 768px) -------- */
+@media (max-width: 768px) {
+  /* Global layout spacing */
+  .app-main {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .page-container,
+  .search-page,
+  .results-page,
+  .admin-page,
+  .about-page,
+  .home-page,
+  .welcome-page {
+    max-width: 100%;
+  }
+
+  /* Header tightening */
+  .app-header__inner {
+    padding: 0.5rem 0.75rem;
+    gap: 0.6rem;
+  }
+
+  .brand-title {
+    font-size: 0.95rem;
+  }
+
+  /* Hide tiny subtitle on phones to save space */
+  .brand-subtitle {
+    display: none;
+  }
+
+  /* Flash messages: a bit narrower & closer to top */
+  .flash-container {
+    top: 60px;
+    width: min(96%, 420px);
+  }
+
+  /* Home hero: logo shrinks a bit */
+  .home-logo-wrapper {
+    width: 260px;
+    max-width: 80%;
+  }
+
+  /* Auth pages: center card & reduce padding */
+  .auth-page {
+    padding: 2.25rem 0.75rem 2rem;
+    align-items: center;
+  }
+
+  .auth-card {
+    padding: 1.25rem 1.3rem;
+  }
+
+  /* Search form: single column, more compact */
+  .search-form {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .search-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkbox-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  /* Breed dropdown panel: avoid getting too tall */
+  .breed-dropdown__panel {
+    max-height: 320px;
+    overflow: hidden;
+  }
+
+  .breed-dropdown__list {
+    max-height: 190px;
+  }
+
+  /* Dog grid cards slightly smaller */
+  .dog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .dog-card__image {
+    height: 210px;
+  }
+
+  /* Results summary: stack text & button */
+  .results-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .results-summary__actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .results-summary .btn-secondary {
+    width: auto;
+  }
+
+  /* Sticky filter card can be annoying on small screens – make it normal */
+  .search-filters-card {
+    position: static;
+    top: auto;
+    border-width: 2px;
+  }
+
+  /* Dog detail layout: stack on smaller screens */
+  .dog-detail__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dog-detail__media,
+  .dog-detail__info-card {
+    padding: 0.9rem;
+  }
+
+  /* About page: stack side-by-side sections vertically */
+  .about-dogs {
+    grid-template-columns: 1fr;
+  }
+
+  .about-meg {
+    flex-direction: column;
+  }
+
+  .about-meg-photo {
+    width: 260px;
+  }
+
+  /* Spotlight cards: shorter image */
+  .spotlight-card-image {
+    height: 260px;
+  }
+
+  /* Admin page padding */
+  .admin-page {
+    padding: 1.5rem 0.9rem 1.75rem;
+  }
+
+  /* Admin table: slightly smaller text */
+  .admin-table th,
+  .admin-table td {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.4rem;
+  }
+
+  .admin-table__actions {
+    flex-wrap: wrap;
+  }
+}
+
+/* -------- Small phones (≤ 480px) -------- */
+@media (max-width: 480px) {
+  /* Header: shrink nav button a bit */
+  .nav-dropdown-toggle {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .brand-title {
+    font-size: 0.9rem;
+  }
+
+  /* Home CTA buttons: full-width stack */
+  .home-cta {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .home-cta__primary,
+  .home-cta__secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Welcome card: a bit tighter */
+  .welcome-card {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Spotlight: single column */
+  .spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Dog detail: make main CTA full-width */
+  .dog-detail__external-btn {
+    width: 100%;
+  }
+
+  /* Admin page: less “card” chrome on tiny screens */
+  .admin-page {
+    padding: 1.1rem 0.75rem 1.4rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* About page padding */
+  .about-page {
+    padding: 1.25rem 0.8rem 2rem;
+  }
+
+  .about-card {
+    padding: 1.2rem 1rem;
+  }
+}

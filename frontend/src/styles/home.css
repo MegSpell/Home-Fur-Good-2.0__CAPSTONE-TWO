@@ -1,0 +1,121 @@
+/* ============================================================
+   HOME PAGE (Landing Hero)
+   ------------------------------------------------------------
+   Used by <Home /> to display:
+     - Big circular logo
+     - Login / Signup or Search CTA buttons
+============================================================ */
+
+/* Outer wrapper for the page */
+.home-page {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+/* Vertical layout: logo → buttons */
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+/* ------------------------------------------------------------
+   CIRCULAR LOGO WRAPPER
+   - Creates the circular frame
+   - Centers logo inside
+   - Adds padding, shadow, soft background
+------------------------------------------------------------- */
+.home-logo-wrapper {
+  width: 430px;
+  max-width: 95%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 4px solid var(--sage);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background-color: #faf8ee;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* The actual logo image (kept slightly smaller than wrapper) */
+.home-logo-main {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* ------------------------------------------------------------
+   CTA BUTTON GROUP
+   ------------------------------------------------------------ */
+.home-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Shared CTA button structure */
+.home-cta__primary,
+.home-cta__secondary {
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Primary (solid accent) */
+.home-cta__primary {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.home-cta__primary:hover {
+  background-color: var(--accent-dark);
+}
+
+/* Secondary (outline / white) */
+.home-cta__secondary {
+  background-color: #fff;
+  color: var(--sage-deep);
+  border: 1px solid var(--sage);
+}
+
+.home-cta__secondary:hover {
+  background-color: var(--sage-light);
+}
+
+/* ============================================================
+   INFO CARD (Used for About, 404, Access Restricted, etc.)
+============================================================ */
+
+.info-card {
+  max-width: 800px;
+  margin: 0 auto;
+
+  background-color: #ffffff;
+  padding: 1.75rem 1.5rem;
+
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.info-card h1 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--sage-deep);
+}
+
+.info-card p {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}

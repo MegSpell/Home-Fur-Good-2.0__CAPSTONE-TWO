@@ -1,0 +1,119 @@
+/* =========================================
+   WELCOME PAGE — HERO + SPOTLIGHT SECTION
+========================================= */
+
+/* ---------- Hero Layout ---------- */
+
+.welcome-hero {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Main welcome card */
+.welcome-card {
+  max-width: 700px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1.75rem 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+/* Internal layout for card */
+.welcome-card-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Search Dogs button */
+.welcome-card .btn-primary {
+  margin-top: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1.6rem;
+}
+
+/* ---------- Spotlight Section Wrapper ---------- */
+
+.spotlight-section {
+  margin-top: 2rem;
+}
+
+.spotlight-card-wrapper {
+  background-color: #ffffff;
+  padding: 1.5rem 1.5rem 1.75rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Titles / text */
+.spotlight-title {
+  margin: 0 0 0.25rem;
+  text-align: center;
+  color: var(--sage-deep);
+}
+
+.spotlight-subtitle {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* ---------- Spotlight Dog Cards ---------- */
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.spotlight-card {
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border: 5px solid yellow;   /* your chosen yellow border */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Larger, less cropped image */
+.spotlight-card-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center top;
+  background-color: #f2f2f2;
+}
+
+/* Text area under the image */
+.spotlight-card-body {
+  padding: 0.6rem 0.75rem 0.8rem;
+}
+
+.spotlight-card-name {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.spotlight-card-meta {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Hover animation */
+.spotlight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(235, 226, 56, 0.85);
+  text-decoration: none;
+}

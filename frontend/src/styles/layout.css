@@ -1,0 +1,274 @@
+/* ============================================================
+   APP SHELL (overall layout wrapper)
+   ------------------------------------------------------------
+   - Makes the app a full-height column layout
+   - Header stays at top, footer at bottom
+   - Main content expands naturally between them
+============================================================ */
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   HEADER + NAVIGATION
+============================================================ */
+
+.app-header {
+  background-color: var(--sage-dark);
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+
+  /* Sticky header stays visible while scrolling */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  transition: box-shadow 0.2s ease;
+}
+
+/* Inner header container (centers content) */
+.app-header__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ------------------------------------------------------------
+   BRAND (logo + text block)
+------------------------------------------------------------ */
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-title {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: 1.05rem;
+}
+
+.brand-subtitle {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* ------------------------------------------------------------
+   NAVIGATION — Dropdown Menu
+------------------------------------------------------------ */
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-dropdown-wrapper {
+  position: relative;
+}
+
+/* Toggle button that opens dropdown */
+.nav-dropdown-toggle {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-dropdown-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Dropdown panel */
+.nav-dropdown-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.4rem);
+
+  min-width: 180px;
+  padding: 0.35rem 0;
+
+  background-color: #ffffff;
+  color: var(--sage-deep);
+
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  z-index: 50;
+}
+
+/* Dropdown items */
+.nav-item {
+  display: block;
+  padding: 0.6rem 1rem;
+  width: 100%;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: var(--sage-deep) !important;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.nav-item:hover {
+  background-color: var(--sage-light);
+}
+
+.nav-item--danger {
+  color: #b91c1c !important;
+  font-weight: 600;
+}
+
+.nav-item--danger:hover {
+  background-color: #fee2e2;
+}
+
+/* Logged-in username label inside dropdown */
+.nav-user-label {
+  padding: 0.5rem 1rem 0.3rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+  border-bottom: 1px solid rgba(209, 213, 219, 0.6);
+}
+
+/* ------------------------------------------------------------
+   LEGACY NAV BUTTONS (still safe to keep)
+------------------------------------------------------------ */
+.nav-link,
+.nav-logout-btn {
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  color: #fff;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-logout-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Filled primary */
+.nav-link--primary {
+  background-color: #fff;
+  color: var(--sage-dark);
+}
+
+.nav-link--primary:hover {
+  background-color: #f7faf7;
+}
+
+/* White-outline */
+.nav-link--outline {
+  border: 1px solid #fff;
+}
+
+.nav-link--outline:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-user {
+  font-size: 0.85rem;
+  opacity: 0.95;
+}
+
+/* Responsive header layout */
+@media (max-width: 720px) {
+  .app-header__inner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* ============================================================
+   MAIN CONTENT AREA
+============================================================ */
+
+.app-main {
+  flex: 1;                /* allows main to expand */
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+
+.app-footer {
+  background-color: var(--sage-dark);
+  color: #fff;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.7rem 1rem;
+  margin-top: auto;
+}
+
+.app-footer a {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ============================================================
+   ADMIN MODE STYLING (Header/Logo/Footer)
+============================================================ */
+
+.admin-header {
+  background-color: #8b0000;
+}
+
+.admin-footer {
+  background-color: #8b0000;
+}
+
+.admin-badge {
+  background: #ff4d4d;
+  color: white;
+
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  margin-left: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
