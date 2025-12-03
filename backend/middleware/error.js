@@ -66,19 +66,3 @@ export function errorHandler(err, req, res, next) {
 }
 
 
-
-
-
-//=============before comments==================
-// export function notFound(req, res, next) {
-//   return res.status(404).json({ error: { message: "Not Found", status: 404 } });
-// }
-
-// export function errorHandler(err, req, res, next) {
-//   const status = err.status || 500;
-//   const message = err.message || "Internal Server Error";
-//   if (process.env.NODE_ENV !== "test") {
-//     console.error("ERROR:", status, message);
-//   }
-//   return res.status(status).json({ error: { message, status } });
-// }
