@@ -39,7 +39,7 @@ export async function addFavorite(username, dogId) {
     `
     INSERT INTO favorites (username, dog_id)
     VALUES ($1, $2)
-    ON CONFLICT (username, dogId) DO NOTHING
+    ON CONFLICT (username, dog_id) DO NOTHING
     `,
     [username, dogId]
   );
