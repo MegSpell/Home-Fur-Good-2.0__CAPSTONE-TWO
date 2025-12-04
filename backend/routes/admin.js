@@ -57,7 +57,7 @@ router.get("/users", async (req, res, next) => {
           ARRAY_AGG(f.dog_id) FILTER (WHERE f.dog_id IS NOT NULL),
           '{}'::text[]
         ) AS favorites,
-        COUNT(f.dog_id) AS favorites_count
+        COUNT(f.dogId) AS favorites_count
       FROM users AS u
       LEFT JOIN favorites AS f
         ON f.username = u.username
@@ -104,16 +104,16 @@ router.get("/favorites", async (req, res, next) => {
   try {
     const result = await db.query(
       `
-      SELECT dog_id, COUNT(*) AS count
+      SELECT dogId, COUNT(*) AS count
         FROM favorites
-       GROUP BY dog_id
+       GROUP BY dogId
        ORDER BY COUNT(*) ASC
       `
     );
 
     const counts = {};
     for (let row of result.rows) {
-      counts[row.dog_id] = Number(row.count);
+      counts[row.dogId] = Number(row.count);
     }
 
     return res.json({ counts });
