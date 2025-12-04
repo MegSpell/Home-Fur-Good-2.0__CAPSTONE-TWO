@@ -37,9 +37,9 @@ import db from "../db.js";
 export async function addFavorite(username, dogId) {
   await db.query(
     `
-    INSERT INTO favorites (username, dog_id)
+    INSERT INTO favorites (username, dogId)
     VALUES ($1, $2)
-    ON CONFLICT (username, dog_id) DO NOTHING
+    ON CONFLICT (username, dogId) DO NOTHING
     `,
     [username, dogId]
   );
@@ -57,7 +57,7 @@ export async function removeFavorite(username, dogId) {
     `
     DELETE FROM favorites
      WHERE username = $1
-       AND dog_id = $2
+       AND dogId = $2
     `,
     [username, dogId]
   );
@@ -67,23 +67,23 @@ export async function removeFavorite(username, dogId) {
  * Get all favorite dog IDs for a single user.
  *
  * - Returns an array like: ["12345", "67890", ...]
- * - Sorted by dog_id just so the output is consistent/predictable.
+ * - Sorted by dogId just so the output is consistent/predictable.
  *
  * @returns {Array<string>} list of dog IDs
  */
 export async function getFavoritesForUser(username) {
   const result = await db.query(
     `
-    SELECT dog_id
+    SELECT dogId
       FROM favorites
      WHERE username = $1
-     ORDER BY dog_id
+     ORDER BY dogId
     `,
     [username]
   );
 
-  // result.rows looks like: [ { dog_id: "123" }, { dog_id: "789" }, ... ]
-  return result.rows.map(r => r.dog_id);
+  // result.rows looks like: [ { dog_id: "123" }, { dogId: "789" }, ... ]
+  return result.rows.map(r => r.dogId);
 }
 
 /**
@@ -103,17 +103,17 @@ export async function getFavoritesForUser(username) {
 export async function getFavoriteCounts() {
   const result = await db.query(
     `
-    SELECT dog_id,
+    SELECT dogId,
            COUNT(*)::int AS count
       FROM favorites
-     GROUP BY dog_id
+     GROUP BY dogId
     `
   );
 
   // Convert rows into a dictionary for quick lookup
   const counts = {};
   for (let row of result.rows) {
-    counts[row.dog_id] = row.count;
+    counts[row.dogId] = row.count;
   }
   return counts;
 }
@@ -129,15 +129,15 @@ export async function getFavoriteCounts() {
  *   [ { dog_id: "123", count: 0 }, { dog_id: "456", count: 1 }, ... ]
  *
  * @param {number} limit - Number of dogs to return
- * @returns {Array<{ dog_id: string, count: number }>}
+ * @returns {Array<{ dogId: string, count: number }>}
  */
 export async function getLeastFavorited(limit = 3) {
   const result = await db.query(
     `
-    SELECT dog_id,
+    SELECT dogId,
            COUNT(*)::int AS count
       FROM favorites
-     GROUP BY dog_id
+     GROUP BY dogId
      ORDER BY count ASC
      LIMIT $1
     `,
