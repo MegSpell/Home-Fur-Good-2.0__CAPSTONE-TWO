@@ -37,7 +37,7 @@ import db from "../db.js";
 export async function addFavorite(username, dogId) {
   await db.query(
     `
-    INSERT INTO favorites (username, dogId)
+    INSERT INTO favorites (username, dog_id)
     VALUES ($1, $2)
     ON CONFLICT (username, dogId) DO NOTHING
     `,
@@ -57,7 +57,7 @@ export async function removeFavorite(username, dogId) {
     `
     DELETE FROM favorites
      WHERE username = $1
-       AND dogId = $2
+       AND dog_id = $2
     `,
     [username, dogId]
   );
@@ -74,10 +74,10 @@ export async function removeFavorite(username, dogId) {
 export async function getFavoritesForUser(username) {
   const result = await db.query(
     `
-    SELECT dogId
+    SELECT dog_id AS "dogId"
       FROM favorites
      WHERE username = $1
-     ORDER BY dogId
+     ORDER BY dog_id
     `,
     [username]
   );
@@ -103,10 +103,10 @@ export async function getFavoritesForUser(username) {
 export async function getFavoriteCounts() {
   const result = await db.query(
     `
-    SELECT dogId,
+    SELECT dog_id AS "dogId",
            COUNT(*)::int AS count
       FROM favorites
-     GROUP BY dogId
+     GROUP BY dog_id
     `
   );
 
@@ -134,10 +134,10 @@ export async function getFavoriteCounts() {
 export async function getLeastFavorited(limit = 3) {
   const result = await db.query(
     `
-    SELECT dogId,
+    SELECT dog_id AS "dogId",
            COUNT(*)::int AS count
       FROM favorites
-     GROUP BY dogId
+     GROUP BY dog_id
      ORDER BY count ASC
      LIMIT $1
     `,
