@@ -30,7 +30,7 @@ import axios from "axios";
 // If it's NOT set, we fall back to localhost.
 // -----------------------------------------------------------
 const BASE_URL =
-  import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
+  import.meta.env.VITE_BACKEND_URL ||  "https://home-fur-good-2-0-capstone-two.onrender.com";
 
 // -----------------------------------------------------------
 // AXIOS INSTANCE
