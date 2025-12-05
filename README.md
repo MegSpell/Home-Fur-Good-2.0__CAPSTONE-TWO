@@ -233,6 +233,8 @@ Delete users
 View global favorite counts
 
 🖼️ Screenshots
+
+
 📝 Sign Up Page
 <img src="./frontend/public/screenshots/3screenshot-signup.png" width="700" alt="Sign Up Page" /> <p align="center"><em>New users can create an account to access search, favorites, and more.</em></p>
 🔐 Login Page
@@ -259,6 +261,7 @@ View global favorite counts
 <img src="./frontend/public/screenshots/12screenshot-menudropdown.png" width="320" alt="Mobile Navigation" /> <p align="center"><em>Mobile-friendly dropdown menu with all user routes.</em></p> <img src="./frontend/public/screenshots/14screenshot-admin-dropdownmenu.png" width="320" alt="Admin Navigation" /> <p align="center"><em>Admin dropdown adds management and dashboard links.</em></p>
 🛠️ Admin Dashboard
 <img src="./frontend/public/screenshots/15screenshot-admin-dash.png" width="700" alt="Admin Dashboard" /> <p align="center"><em>Admins can view user activity and adoption engagement at a glance.</em></p>
+
 🔌 API Documentation
 🐶 External API — RescueGroups.org
 
@@ -377,6 +380,8 @@ Use organization website when available
 Allow admins to manually override URLs
 
 Add Petfinder fallback source
+
+Add informational emails to be sent to user
 
 🤝 About the Developer
 
