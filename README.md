@@ -2,8 +2,8 @@
 
 A modern React + Node adoption platform helping overlooked rescue dogs find their FURever homes.
 
-🔗 Live Site: Add your deployed URL here
-🔗 Backend: Add deployed backend URL if applicable
+🔗 Live Site: (https://home-fur-good-2-0-capstone-two-2.onrender.com/)
+🔗 Backend: https://home-fur-good-2-0-capstone-two.onrender.com/
 
 📌 Description
 
